@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bot Vendas — Termos de Compra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#050507;
+      --card-start:#8b3bff; /* lighter purple */
+      --card-end:#5a00d6;   /* deep purple */
+      --card-shadow: rgba(74,0,127,0.45);
+      --gap:16px;
+      --radius:14px;
+      --glass: rgba(255,255,255,0.04);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,var(--bg) 0%, #07070a 60%);
+      color:#fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:48px 20px;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:960px;
+    }
+
+    header{
+      text-align:center;
+      margin-bottom:28px;
+    }
+    header h1{
+      margin:0 0 6px 0;
+      font-size:22px;
+      letter-spacing:0.2px;
+      font-weight:700;
+    }
+    header p{margin:0;opacity:0.7;font-size:13px}
+
+    .cards{
+      display:flex;
+      flex-direction:column;
+      gap:var(--gap);
+    }
+
+    .card{
+      position:relative;
+      background: linear-gradient(135deg,var(--card-start), var(--card-end));
+      border-radius:var(--radius);
+      padding:22px 20px;
+      box-shadow: 0 10px 30px var(--card-shadow), inset 0 1px 0 rgba(255,255,255,0.02);
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.03);
+      backdrop-filter: blur(4px);
+      transition: transform .32s cubic-bezier(.2,.9,.2,1), box-shadow .32s;
+      transform-origin:center;
+      animation:fadeUp .6s ease forwards;
+      opacity:0;
+    }
+
+    .card:nth-child(1){animation-delay:0.06s}
+    .card:nth-child(2){animation-delay:0.12s}
+    .card:nth-child(3){animation-delay:0.18s}
+    .card:nth-child(4){animation-delay:0.24s}
+    .card:nth-child(5){animation-delay:0.30s}
+    .card:nth-child(6){animation-delay:0.36s}
+    .card:nth-child(7){animation-delay:0.42s}
+    .card:nth-child(8){animation-delay:0.48s}
+    .card:nth-child(9){animation-delay:0.54s}
+    .card:nth-child(10){animation-delay:0.60s}
+
+    .card:hover{
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 20px 50px rgba(80,12,140,0.55);
+    }
+
+    .badge{
+      position:absolute;
+      right:16px;
+      top:16px;
+      background: rgba(0,0,0,0.18);
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:600;
+      font-size:12px;
+      color: #fff;
+      border:1px solid rgba(255,255,255,0.04);
+    }
+
+    .title{
+      display:flex;
+      gap:12px;
+      align-items:baseline;
+      margin-bottom:6px;
+    }
+    .title h3{margin:0;font-size:15px;font-weight:700}
+    .title span{font-size:12px;opacity:0.85}
+
+    .desc{opacity:0.96;font-size:14px;line-height:1.45}
+
+    /* subtle glowing gloss */
+    .card::after{
+      content:"";
+      position:absolute;
+      left:-20%;
+      top:-40%;
+      width:140%;
+      height:120%;
+      transform:rotate(25deg);
+      background: radial-gradient(600px 120px at 30% 30%, rgba(255,255,255,0.04), transparent 15%);
+      pointer-events:none;
+      mix-blend-mode: overlay;
+    }
+
+    @keyframes fadeUp{
+      from{opacity:0;transform: translateY(12px) scale(.998)}
+      to{opacity:1;transform: translateY(0) scale(1)}
+    }
+
+    /* responsive */
+    @media (max-width:520px){
+      .card{padding:18px}
+      header h1{font-size:18px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Bot Vendas | Termos de compra</h1>
+      <p>Leia com atenção antes de efetuar a compra — termos em estilo direto e objetivo.</p>
+    </header>
+
+    <main class="cards">
+
+      <section class="card">
+        <div class="badge">1</div>
+        <div class="title"><h3>Não ler a descrição</h3><span>— Sem reembolso</span></div>
+        <div class="desc">Não daremos reembolso por não ler a descrição e nome do produto.</div>
+      </section>
+
+      <section class="card">
+        <div class="badge">2</div>
+        <div class="title"><h3>Uso desconhecido</h3><span>— Suporte oferecido</span></div>
+        <div class="desc">Não daremos reembolso por não saber usar o produto (iremos dar total suporte).</div>
+      </section>
+
+      <section class="card">
+        <div class="badge">3</div>
+        <div class="title"><h3>Erro na entrega</h3><span>— Reembolso ou nova entrega</span></div>
+        <div class="desc">Reembolsamos apenas em erro na entrega que venha de nossa parte. Você pode escolher receber o produto ou receber o reembolso.</div>
+      </section>
+
+      <section class="card">
+        <div class="badge">4</div>
+        <div class="title"><h3>Quebra de regras</h3><span>— Banimento sem reembolso</span></div>
+        <div class="desc">Caso quebre as regras do servidor, iremos te banir do servidor sem direito a reembolso.</div>
+      </section>
+
+      <section class="card">
+        <div class="badge">5</div>
+        <div class="title"><h3>Uso pessoal</h3><span>— Proibida revenda</span></div>
+        <div class="desc">Produtos digitais são de uso pessoal, não podendo ser revendidos ou compartilhados com terceiros.</div>
+      </section>
+
+      <section class="card">
+        <div class="badge">6</div>
+        <div class="title"><h3>Mau uso</h3><span>— Sem responsabilidade</span></div>
+        <div class="desc">Não nos responsabilizamos por mau uso do produto adquirido; correções fora do escopo do suporte podem ser cobradas.</div>
+      </section>
+
+      <section class="card">
+        <div class="badge">7</div>
+        <div class="title"><h3>Segurança da conta</h3><span>— Responsabilidade do comprador</span></div>
+        <div class="desc">A responsabilidade por manter a conta segura (senha, login, 2FA etc.) é inteiramente do comprador.</div>
+      </section>
+
+      <section class="card">
+        <div class="badge">8</div>
+        <div class="title"><h3>Fraude e estorno</h3><span>— Banimento e perda de acesso</span></div>
+        <div class="desc">Tentativas de fraude, chargeback ou estorno indevido resultarão em banimento imediato e perda de acesso ao produto, sem reembolso.</div>
+      </section>
+
+      <section class="card">
+        <div class="badge">9</div>
+        <div class="title"><h3>Manutenção</h3><span>— Interrupção temporária</span></div>
+        <div cla
